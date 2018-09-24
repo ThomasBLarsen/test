@@ -10,7 +10,7 @@ ser = serial.Serial('/dev/ttyUSB0',921600,timeout=10)
 ser.flush()
 ser.write(b'\xfa\xff\x40\x00\xc1')
 ConfigWritten = False
-for i in range(100):
+for i in range(500):
 	data = ser.read_until(b'\xfa\xff')
 	if data[0] ==  13:
 		f.write(b'\xfa\xff\x0d')
